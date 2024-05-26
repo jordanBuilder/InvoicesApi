@@ -25,6 +25,7 @@ class Invoice extends Model
         "total_vat",
         "total_price_excluding_vat",
         "total_price",
+        "user_id"
     ];
 
     protected $casts = [

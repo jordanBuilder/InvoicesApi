@@ -43,7 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function invoices(): HasMany{
+    public function invoice(){
         return $this->HasMany(Invoice::class);
     }
 }
