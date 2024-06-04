@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Invoice;
+namespace App\Http\Resources\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class InvoiceResource extends JsonResource
+class UserResource extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -15,10 +14,6 @@ class InvoiceResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
-            'id'=>$this->id,
-            'total_price'=>$this->total_price . '$',
-            'owner'=> 
-        ];
+        return parent::toArray($request);
     }
 }

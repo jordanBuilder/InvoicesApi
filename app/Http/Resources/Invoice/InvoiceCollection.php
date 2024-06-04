@@ -7,6 +7,9 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class InvoiceCollection extends ResourceCollection
 {
+    //on lui precise la resource qu'il doit retourner
+
+    public $collects = InvoiceResource::class;
     /**
      * Transform the resource collection into an array.
      *
@@ -14,6 +17,9 @@ class InvoiceCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'data'=> $this->collection,
+           
+        ];
     }
 }
