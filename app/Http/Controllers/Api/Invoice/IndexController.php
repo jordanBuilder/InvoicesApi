@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 
-class InvoiceIndexController extends Controller
+class IndexController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -18,7 +18,7 @@ class InvoiceIndexController extends Controller
         ->with([
             'user',
         ])
-        ->where('user_id',$request->user()->id)
+        ->where('user_id', $request->user()->id)
         ->paginate(25);
     }
 }

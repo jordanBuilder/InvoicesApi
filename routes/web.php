@@ -38,14 +38,14 @@ Route::middleware('auth:sanctum')->group(static function(): void
 
 //Nos routes pour nod facturations
 
-Route::prefix('invoices')
-->as('invoices.')
-->group(
-    static function():void
-    {
-    Route::get('/', InvoiceIndexController::class);
-    })
-    ->name('index');
+// Route::prefix('invoices')
+// ->as('invoices.')
+// ->group(
+//     static function():void
+//     {
+//     Route::get('/', InvoiceIndexController::class);
+//     })
+//     ->name('index');
 
 });
 //Ici, la route est accessible sans authentification prealable.
