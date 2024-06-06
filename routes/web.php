@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Invoice\IndexController;
+use App\Http\Controllers\Api\Invoice\StoreController;
 use App\Http\Controllers\Api\InvoiceIndexController;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Support\Facades\Route;
@@ -44,9 +45,14 @@ Route::prefix('invoices')
 ->group(
     static function():void
     {
-    Route::get('/', IndexController::class);
-    })
+    Route::get('/', IndexController::class)
     ->name('index');
+
+    Route::get('/store',StoreController::class)->name('store');
+    });
+
+
+
 
 });
 

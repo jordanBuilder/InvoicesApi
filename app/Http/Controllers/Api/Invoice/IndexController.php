@@ -23,7 +23,7 @@ class IndexController extends Controller
                     'user'
                 ])
                 ->where('user_id',$request->user()->id)
-                ->paginate(25),
+                ->paginate(10),
                 );
 }
 

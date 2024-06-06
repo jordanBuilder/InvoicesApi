@@ -29,9 +29,9 @@ class InvoiceCollectionResponse implements Responsable
     public function toResponse($request)
     {
         return response()->json(
-          data: new InvoiceCollection(
+          data: InvoiceCollection::make(
             resource: $this->collection,
-          ),
+          )->response()->getData(),
           status:$this->status,
         );
     }
