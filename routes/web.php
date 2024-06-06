@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Invoice\IndexController;
 use App\Http\Controllers\Api\InvoiceIndexController;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Support\Facades\Route;
@@ -38,16 +39,18 @@ Route::middleware('auth:sanctum')->group(static function(): void
 
 //Nos routes pour nod facturations
 
-// Route::prefix('invoices')
-// ->as('invoices.')
-// ->group(
-//     static function():void
-//     {
-//     Route::get('/', InvoiceIndexController::class);
-//     })
-//     ->name('index');
+Route::prefix('invoices')
+->as('invoices.')
+->group(
+    static function():void
+    {
+    Route::get('/', IndexController::class);
+    })
+    ->name('index');
 
 });
+
+
 //Ici, la route est accessible sans authentification prealable.
 
 //on récupère le premier utilisateur dans la BD ou une erreur si aucun n'existe.

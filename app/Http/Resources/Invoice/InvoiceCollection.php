@@ -19,7 +19,6 @@ class InvoiceCollection extends ResourceCollection
     {
         return [
             'data'=> $this->collection,
-           
         ];
     }
 }
